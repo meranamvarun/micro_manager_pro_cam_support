@@ -57,3 +57,12 @@ set_target_properties(mmgr_dal_LoupeCam PROPERTIES
   OUTPUT_NAME "mmgr_dal_LoupeCam"
 )
 
+enable_testing()
+add_executable(loupecam_adapter_smoke tests/adapter_smoke.cpp)
+target_include_directories(loupecam_adapter_smoke PRIVATE "${MMDEVICE_DIR}")
+target_compile_features(loupecam_adapter_smoke PRIVATE cxx_std_17)
+if(MSVC)
+  target_compile_options(loupecam_adapter_smoke PRIVATE /W4 /permissive- /utf-8)
+endif()
+target_link_libraries(loupecam_adapter_smoke PRIVATE mmgr_dal_LoupeCam)
+add_test(NAME loupecam_adapter_simulation COMMAND loupecam_adapter_smoke)

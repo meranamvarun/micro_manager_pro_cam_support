@@ -163,7 +163,10 @@ int LoupeCamAdapter::OpenCamera()
 int LoupeCamAdapter::StartStream()
 {
    LoupecamStartOptions options = loupecam_start_options_default();
-   options.size = 0;
+   // Keep CI and local simulation fast while real hardware defaults to its
+   // highest-detail mode. A user-facing resolution selector will replace this
+   // temporary policy when the first physical model is validated.
+   options.size = simulation_ ? 2 : 0;
    options.pixel_mode = LOUPECAM_PIXEL_MODE_RAW8;
    options.exposure_us = static_cast<uint32_t>(
       std::clamp(exposureMs_ * 1000.0, 1.0, 4294967295.0));

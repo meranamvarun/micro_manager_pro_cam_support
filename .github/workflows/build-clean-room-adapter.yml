@@ -16,6 +16,7 @@ env:
 jobs:
   build-windows-x64:
     runs-on: windows-2025
+    timeout-minutes: 30
 
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
@@ -42,8 +43,8 @@ jobs:
       - name: Test and build LoupeCam C ABI
         shell: pwsh
         run: |
-          cargo test --manifest-path external/loupecam/Cargo.toml -p loupecam-capi
-          cargo build --manifest-path external/loupecam/Cargo.toml --release -p loupecam-capi
+          cargo test --locked --manifest-path external/loupecam/Cargo.toml -p loupecam-capi --lib
+          cargo build --locked --manifest-path external/loupecam/Cargo.toml --release -p loupecam-capi
           Get-ChildItem external/loupecam/target/release -Filter 'loupecam_c*'
 
       - name: Configure adapter
@@ -57,6 +58,10 @@ jobs:
       - name: Build adapter
         shell: pwsh
         run: cmake --build build --config Release --parallel
+
+      - name: Test adapter with simulated camera
+        shell: pwsh
+        run: ctest --test-dir build -C Release --output-on-failure
 
       - name: Stage and hash artifacts
         shell: pwsh

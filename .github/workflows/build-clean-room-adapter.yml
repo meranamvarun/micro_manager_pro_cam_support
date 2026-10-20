@@ -40,6 +40,10 @@ jobs:
         with:
           toolchain: 1.88.0
 
+      - name: Audit tracked source text
+        shell: pwsh
+        run: ./scripts/audit-clean-room-source.ps1
+
       - name: Test and build LoupeCam C ABI
         shell: pwsh
         run: |
@@ -69,8 +73,25 @@ jobs:
           New-Item -ItemType Directory artifacts | Out-Null
           Copy-Item build/Release/mmgr_dal_LoupeCam.dll artifacts/
           Copy-Item external/loupecam/target/release/loupecam_c.dll artifacts/
-          Get-FileHash artifacts/* -Algorithm SHA256 | Format-Table
-          Get-FileHash artifacts/* -Algorithm SHA256 |
+          Copy-Item LICENSE artifacts/LICENSE-ADAPTER-APACHE-2.0.txt
+          Copy-Item LICENSE-MIT artifacts/LICENSE-LOUPECAM-MIT.txt
+          Copy-Item LICENSE-APACHE artifacts/LICENSE-LOUPECAM-APACHE-2.0.txt
+          Copy-Item external/mmCoreAndDevices/MMDevice/license.txt artifacts/LICENSE-MMDEVICE-BSD-3-CLAUSE.txt
+          Copy-Item docs/clean-room-replacement.md artifacts/READ-ME-FIRST.md
+          cargo tree --locked --manifest-path external/loupecam/Cargo.toml -p loupecam-capi | Set-Content artifacts/RUST-DEPENDENCIES.txt
+          @(
+            'Primary researcher: Malavika S'
+            "Adapter source commit: $(git rev-parse HEAD)"
+            "LoupeCam source commit: $(git -C external/loupecam rev-parse HEAD)"
+            "Micro-Manager source commit: $(git -C external/mmCoreAndDevices rev-parse HEAD)"
+            "Rust compiler: $(rustc --version)"
+            "Cargo: $(cargo --version)"
+            "CMake: $((cmake --version | Select-Object -First 1))"
+            'Micro-Manager Device API: 75'
+            'AI assistance: drafting and technical-verification aid; not researcher or author.'
+          ) | Set-Content artifacts/BUILD-PROVENANCE.txt
+          Get-FileHash artifacts/*.dll -Algorithm SHA256 | Format-Table
+          Get-FileHash artifacts/*.dll -Algorithm SHA256 |
             ForEach-Object { "{0}  {1}" -f $_.Hash.ToLowerInvariant(), $_.Path.Split('\')[-1] } |
             Set-Content artifacts/SHA256SUMS.txt
 

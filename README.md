@@ -4,6 +4,8 @@ A practical Windows guide for using ToupTek USB microscope cameras—and compati
 
 This is an independent community guide. It is not affiliated with or endorsed by ToupTek, Radical Scientific, or the Micro-Manager project. Do not redistribute proprietary camera drivers in this repository; download them from the manufacturer.
 
+> **Source-auditable replacement work:** The `clean-room-driver` branch contains an experimental Micro-Manager adapter backed by the independent, MIT/Apache-2.0 LoupeCam USB driver. It does not yet drive the `0547:114C` ProCAM hardware; see [the clean-room assessment](docs/clean-room-replacement.md) for the exact support boundary.
+
 ## Known working setup
 
 The workflow was verified with:

@@ -1,0 +1,59 @@
+cmake_minimum_required(VERSION 3.24)
+project(MicroManagerLoupeCam LANGUAGES CXX)
+
+if(NOT DEFINED MMCOREANDDEVICES_ROOT)
+  message(FATAL_ERROR "Set MMCOREANDDEVICES_ROOT to a Device API 75 mmCoreAndDevices checkout")
+endif()
+
+if(NOT DEFINED LOUPECAM_ROOT)
+  message(FATAL_ERROR "Set LOUPECAM_ROOT to the pinned LoupeCam checkout")
+endif()
+
+if(NOT DEFINED LOUPECAM_LIBRARY_DIR)
+  message(FATAL_ERROR "Set LOUPECAM_LIBRARY_DIR to the directory containing loupecam_c.lib")
+endif()
+
+set(MMDEVICE_DIR "${MMCOREANDDEVICES_ROOT}/MMDevice")
+
+add_library(mmgr_dal_LoupeCam SHARED
+  adapter/LoupeCamAdapter.cpp
+  ${MMDEVICE_DIR}/Debayer.cpp
+  ${MMDEVICE_DIR}/DeviceUtils.cpp
+  ${MMDEVICE_DIR}/ImgBuffer.cpp
+  ${MMDEVICE_DIR}/MMDevice.cpp
+  ${MMDEVICE_DIR}/ModuleInterface.cpp
+  ${MMDEVICE_DIR}/Property.cpp
+)
+
+target_include_directories(mmgr_dal_LoupeCam PRIVATE
+  adapter
+  "${MMDEVICE_DIR}"
+  "${LOUPECAM_ROOT}/bindings/c/include"
+)
+
+target_compile_features(mmgr_dal_LoupeCam PRIVATE cxx_std_17)
+target_compile_definitions(mmgr_dal_LoupeCam PRIVATE
+  NOMINMAX
+  WIN32_LEAN_AND_MEAN
+  _CRT_SECURE_NO_WARNINGS
+  _SCL_SECURE_NO_WARNINGS
+)
+
+if(MSVC)
+  target_compile_options(mmgr_dal_LoupeCam PRIVATE /W4 /permissive- /utf-8)
+  target_link_options(mmgr_dal_LoupeCam PRIVATE /DYNAMICBASE /NXCOMPAT)
+endif()
+
+find_library(LOUPECAM_C_LIBRARY
+  NAMES loupecam_c loupecam_c.dll
+  PATHS "${LOUPECAM_LIBRARY_DIR}"
+  NO_DEFAULT_PATH
+  REQUIRED
+)
+target_link_libraries(mmgr_dal_LoupeCam PRIVATE "${LOUPECAM_C_LIBRARY}")
+
+set_target_properties(mmgr_dal_LoupeCam PROPERTIES
+  PREFIX ""
+  OUTPUT_NAME "mmgr_dal_LoupeCam"
+)
+

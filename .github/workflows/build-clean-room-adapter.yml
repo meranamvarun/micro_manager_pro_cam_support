@@ -1,0 +1,76 @@
+name: Build source-auditable adapter
+
+on:
+  push:
+    branches: [main, clean-room-driver]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  LOUPECAM_COMMIT: 485ed9b1dbea028b09fe2424f9cbf083d1f4af9c
+  MMCORE_COMMIT: 339e0c8fba8300eeb3452e22683c1520ae8d978a
+
+jobs:
+  build-windows-x64:
+    runs-on: windows-2025
+
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Checkout pinned LoupeCam source
+        shell: pwsh
+        run: |
+          git clone https://github.com/cinderblock/loupecam.git external/loupecam
+          git -C external/loupecam checkout $env:LOUPECAM_COMMIT
+
+      - name: Checkout pinned Micro-Manager device API
+        shell: pwsh
+        run: |
+          git clone https://github.com/micro-manager/mmCoreAndDevices.git external/mmCoreAndDevices
+          git -C external/mmCoreAndDevices checkout $env:MMCORE_COMMIT
+          $line = Select-String external/mmCoreAndDevices/MMDevice/MMDevice.h -Pattern '^#define DEVICE_INTERFACE_VERSION 75$'
+          if (-not $line) { throw 'Pinned Micro-Manager source is not Device API 75' }
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec
+        with:
+          toolchain: 1.88.0
+
+      - name: Test and build LoupeCam C ABI
+        shell: pwsh
+        run: |
+          cargo test --manifest-path external/loupecam/Cargo.toml -p loupecam-capi
+          cargo build --manifest-path external/loupecam/Cargo.toml --release -p loupecam-capi
+          Get-ChildItem external/loupecam/target/release -Filter 'loupecam_c*'
+
+      - name: Configure adapter
+        shell: pwsh
+        run: |
+          cmake -S . -B build -A x64 `
+            -DMMCOREANDDEVICES_ROOT="$pwd/external/mmCoreAndDevices" `
+            -DLOUPECAM_ROOT="$pwd/external/loupecam" `
+            -DLOUPECAM_LIBRARY_DIR="$pwd/external/loupecam/target/release"
+
+      - name: Build adapter
+        shell: pwsh
+        run: cmake --build build --config Release --parallel
+
+      - name: Stage and hash artifacts
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory artifacts | Out-Null
+          Copy-Item build/Release/mmgr_dal_LoupeCam.dll artifacts/
+          Copy-Item external/loupecam/target/release/loupecam_c.dll artifacts/
+          Get-FileHash artifacts/* -Algorithm SHA256 | Format-Table
+          Get-FileHash artifacts/* -Algorithm SHA256 |
+            ForEach-Object { "{0}  {1}" -f $_.Hash.ToLowerInvariant(), $_.Path.Split('\')[-1] } |
+            Set-Content artifacts/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: micromanager-loupecam-windows-x64-api75
+          path: artifacts/
+          if-no-files-found: error

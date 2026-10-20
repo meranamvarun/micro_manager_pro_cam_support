@@ -44,13 +44,32 @@ if(MSVC)
   target_link_options(mmgr_dal_LoupeCam PRIVATE /DYNAMICBASE /NXCOMPAT)
 endif()
 
-find_library(LOUPECAM_C_LIBRARY
-  NAMES loupecam_c loupecam_c.dll
-  PATHS "${LOUPECAM_LIBRARY_DIR}"
-  NO_DEFAULT_PATH
-  REQUIRED
-)
+if(WIN32)
+  # Rust emits both a static archive (loupecam_c.lib) and an import library
+  # (loupecam_c.dll.lib). Link the latter so the adapter uses the separately
+  # auditable loupecam_c.dll shipped in the artifact bundle.
+  set(LOUPECAM_C_LIBRARY "${LOUPECAM_LIBRARY_DIR}/loupecam_c.dll.lib")
+  if(NOT EXISTS "${LOUPECAM_C_LIBRARY}")
+    message(FATAL_ERROR "Missing LoupeCam DLL import library: ${LOUPECAM_C_LIBRARY}")
+  endif()
+else()
+  find_library(LOUPECAM_C_LIBRARY
+    NAMES loupecam_c
+    PATHS "${LOUPECAM_LIBRARY_DIR}"
+    NO_DEFAULT_PATH
+    REQUIRED
+  )
+endif()
 target_link_libraries(mmgr_dal_LoupeCam PRIVATE "${LOUPECAM_C_LIBRARY}")
+
+if(WIN32)
+  add_custom_command(TARGET mmgr_dal_LoupeCam POST_BUILD
+    COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+      "${LOUPECAM_LIBRARY_DIR}/loupecam_c.dll"
+      "$<TARGET_FILE_DIR:mmgr_dal_LoupeCam>/loupecam_c.dll"
+    VERBATIM
+  )
+endif()
 
 set_target_properties(mmgr_dal_LoupeCam PROPERTIES
   PREFIX ""

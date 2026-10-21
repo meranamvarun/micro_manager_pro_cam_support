@@ -1,0 +1,953 @@
+# Direct Ghidra static-analysis evidence
+
+- Executable: `/C:/Users/malai/Downloads/mmgr.20260818/win/x64/toupcam.dll`
+- SHA-256: `40dd6dfc409a790d0be1675ddae53ee4bdfcfc48eea3dedf4730bc34c1f62c27`
+- Format: `Portable Executable (PE)`
+- Language: `x86:LE:64:default`
+- Image base: `180000000`
+
+## Imported symbols
+
+- `KERNEL32.DLL::FormatMessageW`
+- `KERNEL32.DLL::GetFileAttributesExW`
+- `KERNEL32.DLL::LoadLibraryW`
+- `KERNEL32.DLL::GetProcAddress`
+- `KERNEL32.DLL::LocalFree`
+- `KERNEL32.DLL::FreeLibrary`
+- `KERNEL32.DLL::CreateDirectoryW`
+- `KERNEL32.DLL::FindFirstFileW`
+- `KERNEL32.DLL::GetFileSizeEx`
+- `KERNEL32.DLL::SetLastError`
+- `KERNEL32.DLL::FindNextFileW`
+- `KERNEL32.DLL::GetCurrentProcess`
+- `KERNEL32.DLL::ReleaseSemaphore`
+- `KERNEL32.DLL::RemoveDirectoryW`
+- `KERNEL32.DLL::WaitForMultipleObjects`
+- `KERNEL32.DLL::SetThreadPriority`
+- `KERNEL32.DLL::SetEndOfFile`
+- `KERNEL32.DLL::FindClose`
+- `KERNEL32.DLL::CreateMutexA`
+- `KERNEL32.DLL::WaitForSingleObject`
+- `KERNEL32.DLL::GetVersionExW`
+- `KERNEL32.DLL::ReleaseMutex`
+- `KERNEL32.DLL::UnmapViewOfFile`
+- `KERNEL32.DLL::DuplicateHandle`
+- `KERNEL32.DLL::GetModuleHandleA`
+- `KERNEL32.DLL::CreateEventW`
+- `KERNEL32.DLL::SetEvent`
+- `KERNEL32.DLL::DeviceIoControl`
+- `KERNEL32.DLL::QueryPerformanceFrequency`
+- `KERNEL32.DLL::GetSystemInfo`
+- `KERNEL32.DLL::SwitchToThread`
+- `KERNEL32.DLL::CreateFileMappingA`
+- `KERNEL32.DLL::GetCurrentProcessId`
+- `KERNEL32.DLL::FormatMessageA`
+- `KERNEL32.DLL::CreateSemaphoreA`
+- `KERNEL32.DLL::QueryPerformanceCounter`
+- `KERNEL32.DLL::GetTickCount`
+- `KERNEL32.DLL::MapViewOfFileEx`
+- `KERNEL32.DLL::GetProcessTimes`
+- `KERNEL32.DLL::GetModuleFileNameA`
+- `KERNEL32.DLL::GetModuleHandleExW`
+- `KERNEL32.DLL::GetModuleFileNameW`
+- `KERNEL32.DLL::GetCurrentThreadId`
+- `KERNEL32.DLL::GlobalMemoryStatusEx`
+- `KERNEL32.DLL::GetModuleHandleW`
+- `KERNEL32.DLL::MultiByteToWideChar`
+- `KERNEL32.DLL::CancelIoEx`
+- `KERNEL32.DLL::ResetEvent`
+- `KERNEL32.DLL::GetOverlappedResult`
+- `KERNEL32.DLL::WideCharToMultiByte`
+- `KERNEL32.DLL::QueryDosDeviceW`
+- `KERNEL32.DLL::GetSystemTimes`
+- `KERNEL32.DLL::FileTimeToSystemTime`
+- `KERNEL32.DLL::DisableThreadLibraryCalls`
+- `KERNEL32.DLL::GetFullPathNameW`
+- `KERNEL32.DLL::Sleep`
+- `KERNEL32.DLL::CloseHandle`
+- `KERNEL32.DLL::GetLastError`
+- `KERNEL32.DLL::CreateFileW`
+- `KERNEL32.DLL::SetFilePointer`
+- `KERNEL32.DLL::WriteFile`
+- `KERNEL32.DLL::GetCurrentThread`
+- `KERNEL32.DLL::ReadFile`
+- `KERNEL32.DLL::RtlCaptureContext`
+- `KERNEL32.DLL::RtlLookupFunctionEntry`
+- `KERNEL32.DLL::RtlVirtualUnwind`
+- `KERNEL32.DLL::UnhandledExceptionFilter`
+- `KERNEL32.DLL::SetUnhandledExceptionFilter`
+- `KERNEL32.DLL::TerminateProcess`
+- `KERNEL32.DLL::IsProcessorFeaturePresent`
+- `KERNEL32.DLL::ReleaseSRWLockExclusive`
+- `KERNEL32.DLL::AcquireSRWLockExclusive`
+- `KERNEL32.DLL::WakeAllConditionVariable`
+- `KERNEL32.DLL::SleepConditionVariableSRW`
+- `KERNEL32.DLL::InitializeSListHead`
+- `KERNEL32.DLL::IsDebuggerPresent`
+- `KERNEL32.DLL::GetStartupInfoW`
+- `KERNEL32.DLL::GetSystemTimeAsFileTime`
+- `KERNEL32.DLL::WaitForSingleObjectEx`
+- `KERNEL32.DLL::GetExitCodeThread`
+- `KERNEL32.DLL::WakeConditionVariable`
+- `KERNEL32.DLL::GetLocaleInfoEx`
+- `KERNEL32.DLL::GetStringTypeW`
+- `KERNEL32.DLL::TryAcquireSRWLockExclusive`
+- `KERNEL32.DLL::GetTickCount64`
+- `KERNEL32.DLL::InitOnceComplete`
+- `KERNEL32.DLL::InitOnceBeginInitialize`
+- `KERNEL32.DLL::EnterCriticalSection`
+- `KERNEL32.DLL::LeaveCriticalSection`
+- `KERNEL32.DLL::InitializeCriticalSectionEx`
+- `KERNEL32.DLL::DeleteCriticalSection`
+- `KERNEL32.DLL::EncodePointer`
+- `KERNEL32.DLL::DecodePointer`
+- `KERNEL32.DLL::LCMapStringEx`
+- `KERNEL32.DLL::GetCPInfo`
+- `KERNEL32.DLL::RtlUnwindEx`
+- `KERNEL32.DLL::InterlockedPushEntrySList`
+- `KERNEL32.DLL::InterlockedFlushSList`
+- `KERNEL32.DLL::RtlPcToFileHeader`
+- `KERNEL32.DLL::RaiseException`
+- `KERNEL32.DLL::InitializeCriticalSectionAndSpinCount`
+- `KERNEL32.DLL::TlsAlloc`
+- `KERNEL32.DLL::TlsGetValue`
+- `KERNEL32.DLL::TlsSetValue`
+- `KERNEL32.DLL::TlsFree`
+- `KERNEL32.DLL::LoadLibraryExW`
+- `KERNEL32.DLL::ExitProcess`
+- `KERNEL32.DLL::SetFilePointerEx`
+- `KERNEL32.DLL::GetFileType`
+- `KERNEL32.DLL::CreateThread`
+- `KERNEL32.DLL::ExitThread`
+- `KERNEL32.DLL::FreeLibraryAndExitThread`
+- `KERNEL32.DLL::GetConsoleMode`
+- `KERNEL32.DLL::ReadConsoleW`
+- `KERNEL32.DLL::GetConsoleOutputCP`
+- `KERNEL32.DLL::HeapFree`
+- `KERNEL32.DLL::HeapAlloc`
+- `KERNEL32.DLL::SetStdHandle`
+- `KERNEL32.DLL::GetStdHandle`
+- `KERNEL32.DLL::FlsAlloc`
+- `KERNEL32.DLL::FlsGetValue`
+- `KERNEL32.DLL::FlsSetValue`
+- `KERNEL32.DLL::FlsFree`
+- `KERNEL32.DLL::VirtualProtect`
+- `KERNEL32.DLL::CompareStringW`
+- `KERNEL32.DLL::LCMapStringW`
+- `KERNEL32.DLL::GetLocaleInfoW`
+- `KERNEL32.DLL::IsValidLocale`
+- `KERNEL32.DLL::GetUserDefaultLCID`
+- `KERNEL32.DLL::EnumSystemLocalesW`
+- `KERNEL32.DLL::GetTimeZoneInformation`
+- `KERNEL32.DLL::FlushFileBuffers`
+- `KERNEL32.DLL::HeapReAlloc`
+- `KERNEL32.DLL::HeapSize`
+- `KERNEL32.DLL::HeapQueryInformation`
+- `KERNEL32.DLL::FindFirstFileExW`
+- `KERNEL32.DLL::IsValidCodePage`
+- `KERNEL32.DLL::GetACP`
+- `KERNEL32.DLL::GetOEMCP`
+- `KERNEL32.DLL::GetCommandLineA`
+- `KERNEL32.DLL::GetCommandLineW`
+- `KERNEL32.DLL::GetEnvironmentStringsW`
+- `KERNEL32.DLL::FreeEnvironmentStringsW`
+- `KERNEL32.DLL::SetEnvironmentVariableW`
+- `KERNEL32.DLL::GetProcessHeap`
+- `KERNEL32.DLL::WriteConsoleW`
+- `KERNEL32.DLL::RtlUnwind`
+- `ADVAPI32.DLL::RegQueryValueExA`
+- `ADVAPI32.DLL::RegCreateKeyExA`
+- `ADVAPI32.DLL::RegSetValueExA`
+- `ADVAPI32.DLL::SetSecurityDescriptorDacl`
+- `ADVAPI32.DLL::RegCloseKey`
+- `ADVAPI32.DLL::InitializeSecurityDescriptor`
+- `ADVAPI32.DLL::RegOpenKeyExW`
+- `ADVAPI32.DLL::RegQueryValueExW`
+
+## Exported entry points
+
+- `180d53220` `DllAfStep`
+- `180d55420` `DllAppName`
+- `180c7a240` `DllAwbOnce`
+- `180d55470` `DllCamName`
+- `180d55480` `DllCompany`
+- `180d55230` `DllDumpStack`
+- `180d52c90` `DllEnumCamera`
+- `180d52b50` `DllEnumV2`
+- `180d531a0` `DllGetDefAE`
+- `180d51ba0` `DllGetEnum`
+- `180d56b60` `DllGigeEnable`
+- `180d4e950` `DllGigeReadId`
+- `180d4e380` `DllGigeWriteId`
+- `180d56e80` `DllInitCti`
+- `180d56cf0` `DllInitPci`
+- `180d55d10` `DllIsBusy`
+- `180d569d0` `DllIspEnable`
+- `180d57370` `DllLensName`
+- `180d52dd0` `DllOpen`
+- `180d57710` `DllParseToPidVid`
+- `180d55490` `DllPrefix`
+- `180d533e0` `DllPullImageExt`
+- `180d57630` `DllPullImagePtr`
+- `180d532c0` `DllPullImageV3`
+- `180d53350` `DllPullImageV4`
+- `180d53230` `DllPullImageWithRowPitchV2`
+- `180d57190` `DllRdEEPROM`
+- `180d57410` `DllReadPtr`
+- `180d55cb0` `DllReplug`
+- `180d56950` `DllResetDefect`
+- `180d4e280` `DllRwcFlash`
+- `180d6a790` `DllST4Connect`
+- `180d6a9a0` `DllST4PlusGuide`
+- `180d6aa10` `DllST4PlusGuideState`
+- `180d572d0` `DllSetHwEvent`
+- `180d52f90` `DllStartPullModeWithCallback`
+- `180d530a0` `DllStartPullModeWithCallbackExt`
+- `180d52ea0` `DllVenReq`
+- `180a89d70` `DllVersion`
+- `180d57230` `DllWrEEPROM`
+- `1809fe5b0` `DllWriteFlashBlock`
+- `180d57540` `DllWritePtr`
+- `180d568e0` `DllgetName`
+- `180a89d60` `DllgetPrivateFlag`
+- `180d56fd0` `Dlllog`
+- `180d570b0` `DlllogV`
+- `180d56f00` `Dlllogstr`
+- `180d56870` `DllputName`
+- `180a89d40` `DllputPrivateFlag`
+- `180d577c0` `ExtFreeDefect`
+- `180d57860` `ExtReadDefect`
+- `180d578f0` `ExtWriteDefect`
+- `180d51f30` `HandleST4PlusGuide`
+- `180d51ff0` `HandleST4PlusGuideState`
+- `180d61080` `Toupcam_AAF`
+- `180d5b2b0` `Toupcam_AbbOnce`
+- `180d5b380` `Toupcam_AbbOnePush`
+- `180d5af50` `Toupcam_AwbInit`
+- `180d5adb0` `Toupcam_AwbOnce`
+- `180d5ae80` `Toupcam_AwbOnePush`
+- `180d58180` `Toupcam_Close`
+- `180d60980` `Toupcam_CtiEnable`
+- `180d5bb00` `Toupcam_DfcExport`
+- `180d5bb80` `Toupcam_DfcImport`
+- `180d5b620` `Toupcam_DfcOnce`
+- `180d5b800` `Toupcam_DfcOnePush`
+- `180d57eb0` `Toupcam_Enable`
+- `180d580c0` `Toupcam_Enum`
+- `180d57f20` `Toupcam_EnumV2`
+- `180d57f80` `Toupcam_EnumWithName`
+- `180d5b8a0` `Toupcam_FfcExport`
+- `180d5b9d0` `Toupcam_FfcFile`
+- `180d5b920` `Toupcam_FfcImport`
+- `180d5b580` `Toupcam_FfcOnce`
+- `180d5b760` `Toupcam_FfcOnePush`
+- `180d5d420` `Toupcam_Flush`
+- `180d5bc30` `Toupcam_FpncExport`
+- `180d5bcb0` `Toupcam_FpncImport`
+- `180d5b6c0` `Toupcam_FpncOnce`
+- `180d600e0` `Toupcam_Gain2TempTint`
+- `180d5e060` `Toupcam_GetHistogram`
+- `180d5e0f0` `Toupcam_GetHistogramV2`
+- `180d60810` `Toupcam_GigeEnable`
+- `180d60890` `Toupcam_GigeEnableV2`
+- `180d5f600` `Toupcam_IoControl`
+- `180d5dfc0` `Toupcam_LevelRangeAuto`
+- `180d623e0` `Toupcam_Load`
+- `180d579e0` `Toupcam_Open`
+- `180d58120` `Toupcam_OpenByIndex`
+- `180d593e0` `Toupcam_Pause`
+- `180d60910` `Toupcam_PciEnable`
+- `180d58400` `Toupcam_PullImage`
+- `180d62160` `Toupcam_PullImagePtr`
+- `180d58ca0` `Toupcam_PullImageV2`
+- `180d58ae0` `Toupcam_PullImageV3`
+- `180d58920` `Toupcam_PullImageV4`
+- `180d58600` `Toupcam_PullImageWithRowPitch`
+- `180d58e60` `Toupcam_PullImageWithRowPitchV2`
+- `180d58500` `Toupcam_PullStillImage`
+- `180d58d80` `Toupcam_PullStillImageV2`
+- `180d58710` `Toupcam_PullStillImageWithRowPitch`
+- `180d58ef0` `Toupcam_PullStillImageWithRowPitchV2`
+- `180d62240` `Toupcam_PushImagePtr`
+- `180d57df0` `Toupcam_Replug`
+- `180d57e50` `Toupcam_Reset`
+- `180d5fc00` `Toupcam_ST4PlusGuide`
+- `180d5fd10` `Toupcam_ST4PlusGuideState`
+- `180d594a0` `Toupcam_Snap`
+- `180d59570` `Toupcam_SnapN`
+- `180d597a0` `Toupcam_SnapR`
+- `180d59660` `Toupcam_SnapV2`
+- `180d582f0` `Toupcam_StartPullModeWithCallback`
+- `180d58220` `Toupcam_StartPullModeWithWndMsg`
+- `180d58820` `Toupcam_StartPushMode`
+- `180d58ff0` `Toupcam_StartPushModeV2`
+- `180d590f0` `Toupcam_StartPushModeV3`
+- `180d59210` `Toupcam_StartPushModeV4`
+- `180d59330` `Toupcam_Stop`
+- `180d60170` `Toupcam_TempTint2Gain`
+- `180d59890` `Toupcam_Trigger`
+- `180d59b10` `Toupcam_TriggerSync`
+- `180d59940` `Toupcam_TriggerSyncV4`
+- `180d5fdc0` `Toupcam_Update`
+- `180d579d0` `Toupcam_Version`
+- `180d62300` `Toupcam_WaitImagePtr`
+- `180d58b70` `Toupcam_WaitImageV3`
+- `180d589b0` `Toupcam_WaitImageV4`
+- `180d60080` `Toupcam_all_Model`
+- `180d601f0` `Toupcam_calc_ClarityFactor`
+- `180d602c0` `Toupcam_calc_ClarityFactorV2`
+- `180d60350` `Toupcam_deBayer`
+- `180d60400` `Toupcam_deBayerV2`
+- `180d61970` `Toupcam_export_Cfg`
+- `180d5e6e0` `Toupcam_feed_Pipe`
+- `180d5d060` `Toupcam_get_ABBAuxRect`
+- `180d5cf20` `Toupcam_get_AEAuxRect`
+- `180d61740` `Toupcam_get_AFRoi`
+- `180d614b0` `Toupcam_get_AFState`
+- `180d5cde0` `Toupcam_get_AWBAuxRect`
+- `180d5a2b0` `Toupcam_get_AutoExpoEnable`
+- `180d5a610` `Toupcam_get_AutoExpoRange`
+- `180d5a3e0` `Toupcam_get_AutoExpoTarget`
+- `180d61b00` `Toupcam_get_Binning`
+- `180d61ca0` `Toupcam_get_BinningMethod`
+- `180d61b90` `Toupcam_get_BinningNumber`
+- `180d61c10` `Toupcam_get_BinningValue`
+- `180d5b500` `Toupcam_get_BlackBalance`
+- `180d5c070` `Toupcam_get_Brightness`
+- `180d5c350` `Toupcam_get_Chrome`
+- `180d5c0f0` `Toupcam_get_Contrast`
+- `180d5f220` `Toupcam_get_Enum`
+- `180d5ab40` `Toupcam_get_ExpTimeRange`
+- `180d5abe0` `Toupcam_get_ExpoAGain`
+- `180d5ad10` `Toupcam_get_ExpoAGainRange`
+- `180d5a990` `Toupcam_get_ExpoTime`
+- `180d5c9c0` `Toupcam_get_FanMaxSpeed`
+- `180d5a190` `Toupcam_get_Field`
+- `180d59e10` `Toupcam_get_FinalSize`
+- `180d5f300` `Toupcam_get_FocusMotor`
+- `180d5d9b0` `Toupcam_get_FpgaVersion`
+- `180d5fb60` `Toupcam_get_FrameRate`
+- `180d5d770` `Toupcam_get_FwVersion`
+- `180d5c220` `Toupcam_get_Gamma`
+- `180d5c5b0` `Toupcam_get_HFlip`
+- `180d5cb70` `Toupcam_get_HZ`
+- `180d5be10` `Toupcam_get_Hue`
+- `180d5d830` `Toupcam_get_HwVersion`
+- `180d5eaa0` `Toupcam_get_Int`
+- `180d61420` `Toupcam_get_LensInfo`
+- `180d5dbe0` `Toupcam_get_LevelRange`
+- `180d5dd70` `Toupcam_get_LevelRangeV2`
+- `180d5a790` `Toupcam_get_MaxAutoExpoTimeAGain`
+- `180d5ca40` `Toupcam_get_MaxBitDepth`
+- `180d5c940` `Toupcam_get_MaxSpeed`
+- `180d5a900` `Toupcam_get_MinAutoExpoTimeAGain`
+- `180d5cca0` `Toupcam_get_Mode`
+- `180d5ff40` `Toupcam_get_Model`
+- `180d5d0e0` `Toupcam_get_MonoMode`
+- `180d57d10` `Toupcam_get_Name`
+- `180d5c6e0` `Toupcam_get_Negative`
+- `180d5e9a0` `Toupcam_get_Option`
+- `180d613b0` `Toupcam_get_PixelFormatBitdepth`
+- `180d61340` `Toupcam_get_PixelFormatName`
+- `180d612a0` `Toupcam_get_PixelFormatSupport`
+- `180d5da70` `Toupcam_get_PixelSize`
+- `180d607a0` `Toupcam_get_ProcessMode`
+- `180d5d8f0` `Toupcam_get_ProductionDate`
+- `180d5a210` `Toupcam_get_RawFormat`
+- `180d5aa10` `Toupcam_get_RealExpoTime`
+- `180d5d3a0` `Toupcam_get_RealTime`
+- `180d5a050` `Toupcam_get_Resolution`
+- `180d59fd0` `Toupcam_get_ResolutionNumber`
+- `180d5a0f0` `Toupcam_get_ResolutionRatio`
+- `180d5d5f0` `Toupcam_get_Revision`
+- `180d5f550` `Toupcam_get_Roi`
+- `180d60a70` `Toupcam_get_RoiMode`
+- `180d5bf40` `Toupcam_get_Saturation`
+- `180d61210` `Toupcam_get_SelfTrigger`
+- `180d5d6b0` `Toupcam_get_SerialNumber`
+- `180d59d80` `Toupcam_get_Size`
+- `180d5c8c0` `Toupcam_get_Speed`
+- `180d5d210` `Toupcam_get_StillResolution`
+- `180d5d160` `Toupcam_get_StillResolutionNumber`
+- `180d5f1a0` `Toupcam_get_Str`
+- `180d5f0d0` `Toupcam_get_StrPtr`
+- `180d5b0f0` `Toupcam_get_TempTint`
+- `180d5d4c0` `Toupcam_get_Temperature`
+- `180d5c480` `Toupcam_get_VFlip`
+- `180d60cf0` `Toupcam_get_VignetAmountInt`
+- `180d60bc0` `Toupcam_get_VignetEnable`
+- `180d60e20` `Toupcam_get_VignetMidPointInt`
+- `180d5b230` `Toupcam_get_WhiteBalanceGain`
+- `180d59f50` `Toupcam_get_eSize`
+- `180d62080` `Toupcam_log`
+- `180d61f50` `Toupcam_log_File`
+- `180d61fc0` `Toupcam_log_Level`
+- `180d60fb0` `Toupcam_log_str`
+- `180d5cfa0` `Toupcam_put_ABBAuxRect`
+- `180d5ce60` `Toupcam_put_AEAuxRect`
+- `180d617f0` `Toupcam_put_AFAperture`
+- `180d618b0` `Toupcam_put_AFFMPos`
+- `180d61540` `Toupcam_put_AFMode`
+- `180d61640` `Toupcam_put_AFRoi`
+- `180d5cd20` `Toupcam_put_AWBAuxRect`
+- `180d5a330` `Toupcam_put_AutoExpoEnable`
+- `180d5a510` `Toupcam_put_AutoExpoRange`
+- `180d5a460` `Toupcam_put_AutoExpoTarget`
+- `180d61a30` `Toupcam_put_Binning`
+- `180d5b450` `Toupcam_put_BlackBalance`
+- `180d5bfc0` `Toupcam_put_Brightness`
+- `180d5c3d0` `Toupcam_put_Chrome`
+- `180d5def0` `Toupcam_put_ChromeCallback`
+- `180d5fa00` `Toupcam_put_ColorMatrix`
+- `180d5c170` `Toupcam_put_Contrast`
+- `180d5f930` `Toupcam_put_Curve`
+- `180d604b0` `Toupcam_put_Demosaic`
+- `180d5ac60` `Toupcam_put_ExpoAGain`
+- `180d5de20` `Toupcam_put_ExpoCallback`
+- `180d5aa90` `Toupcam_put_ExpoTime`
+- `180d5c2a0` `Toupcam_put_Gamma`
+- `180d5c630` `Toupcam_put_HFlip`
+- `180d5cac0` `Toupcam_put_HZ`
+- `180d5bd60` `Toupcam_put_Hue`
+- `180d5fab0` `Toupcam_put_InitWBGain`
+- `180d5ea20` `Toupcam_put_Int`
+- `180d5e190` `Toupcam_put_LEDState`
+- `180d5db10` `Toupcam_put_LevelRange`
+- `180d5dc70` `Toupcam_put_LevelRangeV2`
+- `180d5f860` `Toupcam_put_Linear`
+- `180d5a6c0` `Toupcam_put_MaxAutoExpoTimeAGain`
+- `180d5a820` `Toupcam_put_MinAutoExpoTimeAGain`
+- `180d5cbf0` `Toupcam_put_Mode`
+- `180d57ca0` `Toupcam_put_Name`
+- `180d5c760` `Toupcam_put_Negative`
+- `180d5e790` `Toupcam_put_Option`
+- `180d60590` `Toupcam_put_Process`
+- `180d60740` `Toupcam_put_ProcessMode`
+- `180d5d2f0` `Toupcam_put_RealTime`
+- `180d5f450` `Toupcam_put_Roi`
+- `180d60990` `Toupcam_put_RoiMode`
+- `180d60ea0` `Toupcam_put_RoiN`
+- `180d5be90` `Toupcam_put_Saturation`
+- `180d61160` `Toupcam_put_SelfTrigger`
+- `180d59cb0` `Toupcam_put_Size`
+- `180d5c810` `Toupcam_put_Speed`
+- `180d5f050` `Toupcam_put_Str`
+- `180d5b020` `Toupcam_put_TempTint`
+- `180d60670` `Toupcam_put_TempTintInit`
+- `180d5d540` `Toupcam_put_Temperature`
+- `180d5c500` `Toupcam_put_VFlip`
+- `180d60c40` `Toupcam_put_VignetAmountInt`
+- `180d60b10` `Toupcam_put_VignetEnable`
+- `180d60d70` `Toupcam_put_VignetMidPointInt`
+- `180d5b180` `Toupcam_put_WhiteBalanceGain`
+- `180d5f380` `Toupcam_put_XY`
+- `180d59ea0` `Toupcam_put_eSize`
+- `180d57ab0` `Toupcam_query_Model`
+- `180d57c00` `Toupcam_query_Name`
+- `180d57d80` `Toupcam_query_SerialNumber`
+- `180d61d30` `Toupcam_readPtr`
+- `180d5e370` `Toupcam_read_EEPROM`
+- `180d5e640` `Toupcam_read_Pipe`
+- `180d5f7d0` `Toupcam_read_UART`
+- `180d5e450` `Toupcam_rwc_Flash`
+- `180d57b30` `Toupcam_set_Name`
+- `180d61e60` `Toupcam_writePtr`
+- `180d5e290` `Toupcam_write_EEPROM`
+- `180d5e560` `Toupcam_write_Pipe`
+- `180d5f700` `Toupcam_write_UART`
+- `1811c6ee4` `entry`
+
+## Relevant strings and static references
+
+- `181c1e752 DllAppName`
+  - referenced at `181c1e074 in <no function>`
+- `181c1e773 DllCompany`
+  - referenced at `181c1e080 in <no function>`
+- `181c1e78b DllEnumCamera`
+  - referenced at `181c1e088 in <no function>`
+- `181c1e7a3 DllGetDefAE`
+  - referenced at `181c1e090 in <no function>`
+- `181c1e7ba DllGigeEnable`
+  - referenced at `181c1e098 in <no function>`
+- `181c1e81e DllMmgrName`
+  - referenced at `181c1e0b8 in <no function>`
+- `181c1e82a DllOpen`
+  - referenced at `181c1e0bc in <no function>`
+- `181c1e96a DllVersion`
+  - referenced at `181c1e10c in <no function>`
+- `181c1ea49 Toupcam_AAF`
+  - referenced at `181c1e14c in <no function>`
+- `181c1ea55 Toupcam_AbbOnce`
+  - referenced at `181c1e150 in <no function>`
+- `181c1ea65 Toupcam_AbbOnePush`
+  - referenced at `181c1e154 in <no function>`
+- `181c1ea78 Toupcam_AwbInit`
+  - referenced at `181c1e158 in <no function>`
+- `181c1ea88 Toupcam_AwbOnce`
+  - referenced at `181c1e15c in <no function>`
+- `181c1ea98 Toupcam_AwbOnePush`
+  - referenced at `181c1e160 in <no function>`
+- `181c1eaab Toupcam_Close`
+  - referenced at `181c1e164 in <no function>`
+- `181c1eab9 Toupcam_CtiEnable`
+  - referenced at `181c1e168 in <no function>`
+- `181c1eacb Toupcam_DfcExport`
+  - referenced at `181c1e16c in <no function>`
+- `181c1eadd Toupcam_DfcImport`
+  - referenced at `181c1e170 in <no function>`
+- `181c1eaef Toupcam_DfcOnce`
+  - referenced at `181c1e174 in <no function>`
+- `181c1eaff Toupcam_DfcOnePush`
+  - referenced at `181c1e178 in <no function>`
+- `181c1eb12 Toupcam_Enable`
+  - referenced at `181c1e17c in <no function>`
+- `181c1eb21 Toupcam_Enum`
+  - referenced at `181c1e180 in <no function>`
+- `181c1eb2e Toupcam_EnumV2`
+  - referenced at `181c1e184 in <no function>`
+- `181c1eb3d Toupcam_EnumWithName`
+  - referenced at `181c1e188 in <no function>`
+- `181c1eb52 Toupcam_FfcExport`
+  - referenced at `181c1e18c in <no function>`
+- `181c1eb64 Toupcam_FfcFile`
+  - referenced at `181c1e190 in <no function>`
+- `181c1eb74 Toupcam_FfcImport`
+  - referenced at `181c1e194 in <no function>`
+- `181c1eb86 Toupcam_FfcOnce`
+  - referenced at `181c1e198 in <no function>`
+- `181c1eb96 Toupcam_FfcOnePush`
+  - referenced at `181c1e19c in <no function>`
+- `181c1eba9 Toupcam_Flush`
+  - referenced at `181c1e1a0 in <no function>`
+- `181c1ebb7 Toupcam_FpncExport`
+  - referenced at `181c1e1a4 in <no function>`
+- `181c1ebca Toupcam_FpncImport`
+  - referenced at `181c1e1a8 in <no function>`
+- `181c1ebdd Toupcam_FpncOnce`
+  - referenced at `181c1e1ac in <no function>`
+- `181c1ebee Toupcam_Gain2TempTint`
+  - referenced at `181c1e1b0 in <no function>`
+- `181c1ec04 Toupcam_GetHistogram`
+  - referenced at `181c1e1b4 in <no function>`
+- `181c1ec19 Toupcam_GetHistogramV2`
+  - referenced at `181c1e1b8 in <no function>`
+- `181c1ec30 Toupcam_GigeEnable`
+  - referenced at `181c1e1bc in <no function>`
+- `181c1ec43 Toupcam_GigeEnableV2`
+  - referenced at `181c1e1c0 in <no function>`
+- `181c1ec58 Toupcam_IoControl`
+  - referenced at `181c1e1c4 in <no function>`
+- `181c1ec6a Toupcam_LevelRangeAuto`
+  - referenced at `181c1e1c8 in <no function>`
+- `181c1ec81 Toupcam_Load`
+  - referenced at `181c1e1cc in <no function>`
+- `181c1ec8e Toupcam_Open`
+  - referenced at `181c1e1d0 in <no function>`
+- `181c1ec9b Toupcam_OpenByIndex`
+  - referenced at `181c1e1d4 in <no function>`
+- `181c1ecaf Toupcam_Pause`
+  - referenced at `181c1e1d8 in <no function>`
+- `181c1ecbd Toupcam_PciEnable`
+  - referenced at `181c1e1dc in <no function>`
+- `181c1eccf Toupcam_PullImage`
+  - referenced at `181c1e1e0 in <no function>`
+- `181c1ece1 Toupcam_PullImagePtr`
+  - referenced at `181c1e1e4 in <no function>`
+- `181c1ecf6 Toupcam_PullImageV2`
+  - referenced at `181c1e1e8 in <no function>`
+- `181c1ed0a Toupcam_PullImageV3`
+  - referenced at `181c1e1ec in <no function>`
+- `181c1ed1e Toupcam_PullImageV4`
+  - referenced at `181c1e1f0 in <no function>`
+- `181c1ed32 Toupcam_PullImageWithRowPitch`
+  - referenced at `181c1e1f4 in <no function>`
+- `181c1ed50 Toupcam_PullImageWithRowPitchV2`
+  - referenced at `181c1e1f8 in <no function>`
+- `181c1ed70 Toupcam_PullStillImage`
+  - referenced at `181c1e1fc in <no function>`
+- `181c1ed87 Toupcam_PullStillImageV2`
+  - referenced at `181c1e200 in <no function>`
+- `181c1eda0 Toupcam_PullStillImageWithRowPitch`
+  - referenced at `181c1e204 in <no function>`
+- `181c1edc3 Toupcam_PullStillImageWithRowPitchV2`
+  - referenced at `181c1e208 in <no function>`
+- `181c1ede8 Toupcam_PushImagePtr`
+  - referenced at `181c1e20c in <no function>`
+- `181c1edfd Toupcam_Replug`
+  - referenced at `181c1e210 in <no function>`
+- `181c1ee0c Toupcam_Reset`
+  - referenced at `181c1e214 in <no function>`
+- `181c1ee1a Toupcam_ST4PlusGuide`
+  - referenced at `181c1e218 in <no function>`
+- `181c1ee2f Toupcam_ST4PlusGuideState`
+  - referenced at `181c1e21c in <no function>`
+- `181c1ee49 Toupcam_Snap`
+  - referenced at `181c1e220 in <no function>`
+- `181c1ee56 Toupcam_SnapN`
+  - referenced at `181c1e224 in <no function>`
+- `181c1ee64 Toupcam_SnapR`
+  - referenced at `181c1e228 in <no function>`
+- `181c1ee72 Toupcam_SnapV2`
+  - referenced at `181c1e22c in <no function>`
+- `181c1ee81 Toupcam_StartPullModeWithCallback`
+  - referenced at `181c1e230 in <no function>`
+- `181c1eea3 Toupcam_StartPullModeWithWndMsg`
+  - referenced at `181c1e234 in <no function>`
+- `181c1eec3 Toupcam_StartPushMode`
+  - referenced at `181c1e238 in <no function>`
+- `181c1eed9 Toupcam_StartPushModeV2`
+  - referenced at `181c1e23c in <no function>`
+- `181c1eef1 Toupcam_StartPushModeV3`
+  - referenced at `181c1e240 in <no function>`
+- `181c1ef09 Toupcam_StartPushModeV4`
+  - referenced at `181c1e244 in <no function>`
+- `181c1ef21 Toupcam_Stop`
+  - referenced at `181c1e248 in <no function>`
+- `181c1ef2e Toupcam_TempTint2Gain`
+  - referenced at `181c1e24c in <no function>`
+- `181c1ef44 Toupcam_Trigger`
+  - referenced at `181c1e250 in <no function>`
+- `181c1ef54 Toupcam_TriggerSync`
+  - referenced at `181c1e254 in <no function>`
+- `181c1ef68 Toupcam_TriggerSyncV4`
+  - referenced at `181c1e258 in <no function>`
+- `181c1ef7e Toupcam_Update`
+  - referenced at `181c1e25c in <no function>`
+- `181c1ef8d Toupcam_Version`
+  - referenced at `181c1e260 in <no function>`
+- `181c1ef9d Toupcam_WaitImagePtr`
+  - referenced at `181c1e264 in <no function>`
+- `181c1efb2 Toupcam_WaitImageV3`
+  - referenced at `181c1e268 in <no function>`
+- `181c1efc6 Toupcam_WaitImageV4`
+  - referenced at `181c1e26c in <no function>`
+- `181c1efda Toupcam_all_Model`
+  - referenced at `181c1e270 in <no function>`
+- `181c1efec Toupcam_calc_ClarityFactor`
+  - referenced at `181c1e274 in <no function>`
+- `181c1f007 Toupcam_calc_ClarityFactorV2`
+  - referenced at `181c1e278 in <no function>`
+- `181c1f024 Toupcam_deBayer`
+  - referenced at `181c1e27c in <no function>`
+- `181c1f034 Toupcam_deBayerV2`
+  - referenced at `181c1e280 in <no function>`
+- `181c1f046 Toupcam_export_Cfg`
+  - referenced at `181c1e284 in <no function>`
+- `181c1f059 Toupcam_feed_Pipe`
+  - referenced at `181c1e288 in <no function>`
+- `181c1f06b Toupcam_get_ABBAuxRect`
+  - referenced at `181c1e28c in <no function>`
+- `181c1f082 Toupcam_get_AEAuxRect`
+  - referenced at `181c1e290 in <no function>`
+- `181c1f098 Toupcam_get_AFRoi`
+  - referenced at `181c1e294 in <no function>`
+- `181c1f0aa Toupcam_get_AFState`
+  - referenced at `181c1e298 in <no function>`
+- `181c1f0be Toupcam_get_AWBAuxRect`
+  - referenced at `181c1e29c in <no function>`
+- `181c1f0d5 Toupcam_get_AutoExpoEnable`
+  - referenced at `181c1e2a0 in <no function>`
+- `181c1f0f0 Toupcam_get_AutoExpoRange`
+  - referenced at `181c1e2a4 in <no function>`
+- `181c1f10a Toupcam_get_AutoExpoTarget`
+  - referenced at `181c1e2a8 in <no function>`
+- `181c1f125 Toupcam_get_Binning`
+  - referenced at `181c1e2ac in <no function>`
+- `181c1f139 Toupcam_get_BinningMethod`
+  - referenced at `181c1e2b0 in <no function>`
+- `181c1f153 Toupcam_get_BinningNumber`
+  - referenced at `181c1e2b4 in <no function>`
+- `181c1f16d Toupcam_get_BinningValue`
+  - referenced at `181c1e2b8 in <no function>`
+- `181c1f186 Toupcam_get_BlackBalance`
+  - referenced at `181c1e2bc in <no function>`
+- `181c1f19f Toupcam_get_Brightness`
+  - referenced at `181c1e2c0 in <no function>`
+- `181c1f1b6 Toupcam_get_Chrome`
+  - referenced at `181c1e2c4 in <no function>`
+- `181c1f1c9 Toupcam_get_Contrast`
+  - referenced at `181c1e2c8 in <no function>`
+- `181c1f1de Toupcam_get_Enum`
+  - referenced at `181c1e2cc in <no function>`
+- `181c1f1ef Toupcam_get_ExpTimeRange`
+  - referenced at `181c1e2d0 in <no function>`
+- `181c1f208 Toupcam_get_ExpoAGain`
+  - referenced at `181c1e2d4 in <no function>`
+- `181c1f21e Toupcam_get_ExpoAGainRange`
+  - referenced at `181c1e2d8 in <no function>`
+- `181c1f239 Toupcam_get_ExpoTime`
+  - referenced at `181c1e2dc in <no function>`
+- `181c1f24e Toupcam_get_FanMaxSpeed`
+  - referenced at `181c1e2e0 in <no function>`
+- `181c1f266 Toupcam_get_Field`
+  - referenced at `181c1e2e4 in <no function>`
+- `181c1f278 Toupcam_get_FinalSize`
+  - referenced at `181c1e2e8 in <no function>`
+- `181c1f28e Toupcam_get_FocusMotor`
+  - referenced at `181c1e2ec in <no function>`
+- `181c1f2a5 Toupcam_get_FpgaVersion`
+  - referenced at `181c1e2f0 in <no function>`
+- `181c1f2bd Toupcam_get_FrameRate`
+  - referenced at `181c1e2f4 in <no function>`
+- `181c1f2d3 Toupcam_get_FwVersion`
+  - referenced at `181c1e2f8 in <no function>`
+- `181c1f2e9 Toupcam_get_Gamma`
+  - referenced at `181c1e2fc in <no function>`
+- `181c1f2fb Toupcam_get_HFlip`
+  - referenced at `181c1e300 in <no function>`
+- `181c1f30d Toupcam_get_HZ`
+  - referenced at `181c1e304 in <no function>`
+- `181c1f31c Toupcam_get_Hue`
+  - referenced at `181c1e308 in <no function>`
+- `181c1f32c Toupcam_get_HwVersion`
+  - referenced at `181c1e30c in <no function>`
+- `181c1f342 Toupcam_get_Int`
+  - referenced at `181c1e310 in <no function>`
+- `181c1f352 Toupcam_get_LensInfo`
+  - referenced at `181c1e314 in <no function>`
+- `181c1f367 Toupcam_get_LevelRange`
+  - referenced at `181c1e318 in <no function>`
+- `181c1f37e Toupcam_get_LevelRangeV2`
+  - referenced at `181c1e31c in <no function>`
+- `181c1f397 Toupcam_get_MaxAutoExpoTimeAGain`
+  - referenced at `181c1e320 in <no function>`
+- `181c1f3b8 Toupcam_get_MaxBitDepth`
+  - referenced at `181c1e324 in <no function>`
+- `181c1f3d0 Toupcam_get_MaxSpeed`
+  - referenced at `181c1e328 in <no function>`
+- `181c1f3e5 Toupcam_get_MinAutoExpoTimeAGain`
+  - referenced at `181c1e32c in <no function>`
+- `181c1f406 Toupcam_get_Mode`
+  - referenced at `181c1e330 in <no function>`
+- `181c1f417 Toupcam_get_Model`
+  - referenced at `181c1e334 in <no function>`
+- `181c1f429 Toupcam_get_MonoMode`
+  - referenced at `181c1e338 in <no function>`
+- `181c1f43e Toupcam_get_Name`
+  - referenced at `181c1e33c in <no function>`
+- `181c1f44f Toupcam_get_Negative`
+  - referenced at `181c1e340 in <no function>`
+- `181c1f464 Toupcam_get_Option`
+  - referenced at `181c1e344 in <no function>`
+- `181c1f477 Toupcam_get_PixelFormatBitdepth`
+  - referenced at `181c1e348 in <no function>`
+- `181c1f497 Toupcam_get_PixelFormatName`
+  - referenced at `181c1e34c in <no function>`
+- `181c1f4b3 Toupcam_get_PixelFormatSupport`
+  - referenced at `181c1e350 in <no function>`
+- `181c1f4d2 Toupcam_get_PixelSize`
+  - referenced at `181c1e354 in <no function>`
+- `181c1f4e8 Toupcam_get_ProcessMode`
+  - referenced at `181c1e358 in <no function>`
+- `181c1f500 Toupcam_get_ProductionDate`
+  - referenced at `181c1e35c in <no function>`
+- `181c1f51b Toupcam_get_RawFormat`
+  - referenced at `181c1e360 in <no function>`
+- `181c1f531 Toupcam_get_RealExpoTime`
+  - referenced at `181c1e364 in <no function>`
+- `181c1f54a Toupcam_get_RealTime`
+  - referenced at `181c1e368 in <no function>`
+- `181c1f55f Toupcam_get_Resolution`
+  - referenced at `181c1e36c in <no function>`
+- `181c1f576 Toupcam_get_ResolutionNumber`
+  - referenced at `181c1e370 in <no function>`
+- `181c1f593 Toupcam_get_ResolutionRatio`
+  - referenced at `181c1e374 in <no function>`
+- `181c1f5af Toupcam_get_Revision`
+  - referenced at `181c1e378 in <no function>`
+- `181c1f5c4 Toupcam_get_Roi`
+  - referenced at `181c1e37c in <no function>`
+- `181c1f5d4 Toupcam_get_RoiMode`
+  - referenced at `181c1e380 in <no function>`
+- `181c1f5e8 Toupcam_get_Saturation`
+  - referenced at `181c1e384 in <no function>`
+- `181c1f5ff Toupcam_get_SelfTrigger`
+  - referenced at `181c1e388 in <no function>`
+- `181c1f617 Toupcam_get_SerialNumber`
+  - referenced at `181c1e38c in <no function>`
+- `181c1f630 Toupcam_get_Size`
+  - referenced at `181c1e390 in <no function>`
+- `181c1f641 Toupcam_get_Speed`
+  - referenced at `181c1e394 in <no function>`
+- `181c1f653 Toupcam_get_StillResolution`
+  - referenced at `181c1e398 in <no function>`
+- `181c1f66f Toupcam_get_StillResolutionNumber`
+  - referenced at `181c1e39c in <no function>`
+- `181c1f691 Toupcam_get_Str`
+  - referenced at `181c1e3a0 in <no function>`
+- `181c1f6a1 Toupcam_get_StrPtr`
+  - referenced at `181c1e3a4 in <no function>`
+- `181c1f6b4 Toupcam_get_TempTint`
+  - referenced at `181c1e3a8 in <no function>`
+- `181c1f6c9 Toupcam_get_Temperature`
+  - referenced at `181c1e3ac in <no function>`
+- `181c1f6e1 Toupcam_get_VFlip`
+  - referenced at `181c1e3b0 in <no function>`
+- `181c1f6f3 Toupcam_get_VignetAmountInt`
+  - referenced at `181c1e3b4 in <no function>`
+- `181c1f70f Toupcam_get_VignetEnable`
+  - referenced at `181c1e3b8 in <no function>`
+- `181c1f728 Toupcam_get_VignetMidPointInt`
+  - referenced at `181c1e3bc in <no function>`
+- `181c1f746 Toupcam_get_WhiteBalanceGain`
+  - referenced at `181c1e3c0 in <no function>`
+- `181c1f763 Toupcam_get_eSize`
+  - referenced at `181c1e3c4 in <no function>`
+- `181c1f775 Toupcam_log`
+  - referenced at `181c1e3c8 in <no function>`
+- `181c1f781 Toupcam_log_File`
+  - referenced at `181c1e3cc in <no function>`
+- `181c1f792 Toupcam_log_Level`
+  - referenced at `181c1e3d0 in <no function>`
+- `181c1f7a4 Toupcam_log_str`
+  - referenced at `181c1e3d4 in <no function>`
+- `181c1f7b4 Toupcam_put_ABBAuxRect`
+  - referenced at `181c1e3d8 in <no function>`
+- `181c1f7cb Toupcam_put_AEAuxRect`
+  - referenced at `181c1e3dc in <no function>`
+- `181c1f7e1 Toupcam_put_AFAperture`
+  - referenced at `181c1e3e0 in <no function>`
+- `181c1f7f8 Toupcam_put_AFFMPos`
+  - referenced at `181c1e3e4 in <no function>`
+- `181c1f80c Toupcam_put_AFMode`
+  - referenced at `181c1e3e8 in <no function>`
+- `181c1f81f Toupcam_put_AFRoi`
+  - referenced at `181c1e3ec in <no function>`
+- `181c1f831 Toupcam_put_AWBAuxRect`
+  - referenced at `181c1e3f0 in <no function>`
+- `181c1f848 Toupcam_put_AutoExpoEnable`
+  - referenced at `181c1e3f4 in <no function>`
+- `181c1f863 Toupcam_put_AutoExpoRange`
+  - referenced at `181c1e3f8 in <no function>`
+- `181c1f87d Toupcam_put_AutoExpoTarget`
+  - referenced at `181c1e3fc in <no function>`
+- `181c1f898 Toupcam_put_Binning`
+  - referenced at `181c1e400 in <no function>`
+- `181c1f8ac Toupcam_put_BlackBalance`
+  - referenced at `181c1e404 in <no function>`
+- `181c1f8c5 Toupcam_put_Brightness`
+  - referenced at `181c1e408 in <no function>`
+- `181c1f8dc Toupcam_put_Chrome`
+  - referenced at `181c1e40c in <no function>`
+- `181c1f8ef Toupcam_put_ChromeCallback`
+  - referenced at `181c1e410 in <no function>`
+- `181c1f90a Toupcam_put_ColorMatrix`
+  - referenced at `181c1e414 in <no function>`
+- `181c1f922 Toupcam_put_Contrast`
+  - referenced at `181c1e418 in <no function>`
+- `181c1f937 Toupcam_put_Curve`
+  - referenced at `181c1e41c in <no function>`
+- `181c1f949 Toupcam_put_Demosaic`
+  - referenced at `181c1e420 in <no function>`
+- `181c1f95e Toupcam_put_ExpoAGain`
+  - referenced at `181c1e424 in <no function>`
+- `181c1f974 Toupcam_put_ExpoCallback`
+  - referenced at `181c1e428 in <no function>`
+- `181c1f98d Toupcam_put_ExpoTime`
+  - referenced at `181c1e42c in <no function>`
+- `181c1f9a2 Toupcam_put_Gamma`
+  - referenced at `181c1e430 in <no function>`
+- `181c1f9b4 Toupcam_put_HFlip`
+  - referenced at `181c1e434 in <no function>`
+- `181c1f9c6 Toupcam_put_HZ`
+  - referenced at `181c1e438 in <no function>`
+- `181c1f9d5 Toupcam_put_Hue`
+  - referenced at `181c1e43c in <no function>`
+- `181c1f9e5 Toupcam_put_InitWBGain`
+  - referenced at `181c1e440 in <no function>`
+- `181c1f9fc Toupcam_put_Int`
+  - referenced at `181c1e444 in <no function>`
+- `181c1fa0c Toupcam_put_LEDState`
+  - referenced at `181c1e448 in <no function>`
+- `181c1fa21 Toupcam_put_LevelRange`
+  - referenced at `181c1e44c in <no function>`
+- `181c1fa38 Toupcam_put_LevelRangeV2`
+  - referenced at `181c1e450 in <no function>`
+- `181c1fa51 Toupcam_put_Linear`
+  - referenced at `181c1e454 in <no function>`
+- `181c1fa64 Toupcam_put_MaxAutoExpoTimeAGain`
+  - referenced at `181c1e458 in <no function>`
+- `181c1fa85 Toupcam_put_MinAutoExpoTimeAGain`
+  - referenced at `181c1e45c in <no function>`
+- `181c1faa6 Toupcam_put_Mode`
+  - referenced at `181c1e460 in <no function>`
+- `181c1fab7 Toupcam_put_Name`
+  - referenced at `181c1e464 in <no function>`
+- `181c1fac8 Toupcam_put_Negative`
+  - referenced at `181c1e468 in <no function>`
+- `181c1fadd Toupcam_put_Option`
+  - referenced at `181c1e46c in <no function>`
+- `181c1faf0 Toupcam_put_Process`
+  - referenced at `181c1e470 in <no function>`
+- `181c1fb04 Toupcam_put_ProcessMode`
+  - referenced at `181c1e474 in <no function>`
+- `181c1fb1c Toupcam_put_RealTime`
+  - referenced at `181c1e478 in <no function>`
+- `181c1fb31 Toupcam_put_Roi`
+  - referenced at `181c1e47c in <no function>`
+- `181c1fb41 Toupcam_put_RoiMode`
+  - referenced at `181c1e480 in <no function>`
+- `181c1fb55 Toupcam_put_RoiN`
+  - referenced at `181c1e484 in <no function>`
+- `181c1fb66 Toupcam_put_Saturation`
+  - referenced at `181c1e488 in <no function>`
+- `181c1fb7d Toupcam_put_SelfTrigger`
+  - referenced at `181c1e48c in <no function>`
+- `181c1fb95 Toupcam_put_Size`
+  - referenced at `181c1e490 in <no function>`
+- `181c1fba6 Toupcam_put_Speed`
+  - referenced at `181c1e494 in <no function>`
+- `181c1fbb8 Toupcam_put_Str`
+  - referenced at `181c1e498 in <no function>`
+- `181c1fbc8 Toupcam_put_TempTint`
+  - referenced at `181c1e49c in <no function>`
+- `181c1fbdd Toupcam_put_TempTintInit`
+  - referenced at `181c1e4a0 in <no function>`
+- `181c1fbf6 Toupcam_put_Temperature`
+  - referenced at `181c1e4a4 in <no function>`
+- `181c1fc0e Toupcam_put_VFlip`
+  - referenced at `181c1e4a8 in <no function>`
+- `181c1fc20 Toupcam_put_VignetAmountInt`
+  - referenced at `181c1e4ac in <no function>`
+- `181c1fc3c Toupcam_put_VignetEnable`
+  - referenced at `181c1e4b0 in <no function>`
+- `181c1fc55 Toupcam_put_VignetMidPointInt`
+  - referenced at `181c1e4b4 in <no function>`
+- `181c1fc73 Toupcam_put_WhiteBalanceGain`
+  - referenced at `181c1e4b8 in <no function>`
+- `181c1fc90 Toupcam_put_XY`
+  - referenced at `181c1e4bc in <no function>`
+- `181c1fc9f Toupcam_put_eSize`
+  - referenced at `181c1e4c0 in <no function>`
+- `181c1fcb1 Toupcam_query_Model`
+  - referenced at `181c1e4c4 in <no function>`
+- `181c1fcc5 Toupcam_query_Name`
+  - referenced at `181c1e4c8 in <no function>`
+- `181c1fcd8 Toupcam_query_SerialNumber`
+  - referenced at `181c1e4cc in <no function>`
+- `181c1fcf3 Toupcam_readPtr`
+  - referenced at `181c1e4d0 in <no function>`
+- `181c1fd03 Toupcam_read_EEPROM`
+  - referenced at `181c1e4d4 in <no function>`
+- `181c1fd17 Toupcam_read_Pipe`
+  - referenced at `181c1e4d8 in <no function>`
+- `181c1fd29 Toupcam_read_UART`
+  - referenced at `181c1e4dc in <no function>`
+- `181c1fd3b Toupcam_rwc_Flash`
+  - referenced at `181c1e4e0 in <no function>`
+- `181c1fd4d Toupcam_set_Name`
+  - referenced at `181c1e4e4 in <no function>`
+- `181c1fd5e Toupcam_writePtr`
+  - referenced at `181c1e4e8 in <no function>`
+- `181c1fd6f Toupcam_write_EEPROM`
+  - referenced at `181c1e4ec in <no function>`
+- `181c1fd84 Toupcam_write_Pipe`
+  - referenced at `181c1e4f0 in <no function>`
+- `181c1fd97 Toupcam_write_UART`
+  - referenced at `181c1e4f4 in <no function>`
+
+## Selected function pseudocode
+
+Decompiler output is reconstructed pseudocode, not original source.
+
+Stopped after 0 selected functions.

@@ -1,0 +1,172 @@
+# Direct Ghidra static-analysis evidence
+
+- Executable: `/C:/Users/malai/Downloads/mmgr.20260818/win/x64/75/mmgr_dal_Toupcam.dll`
+- SHA-256: `d195b16939067d3169e66e0595d71f98b86920881f705692bc41e9a0b1a0ffd1`
+- Format: `Portable Executable (PE)`
+- Language: `x86:LE:64:default`
+- Image base: `180000000`
+
+## Imported symbols
+
+- `KERNEL32.DLL::InitializeCriticalSection`
+- `KERNEL32.DLL::FindClose`
+- `KERNEL32.DLL::WaitForSingleObject`
+- `KERNEL32.DLL::GetModuleHandleExA`
+- `KERNEL32.DLL::DisableThreadLibraryCalls`
+- `KERNEL32.DLL::LoadLibraryW`
+- `KERNEL32.DLL::LeaveCriticalSection`
+- `KERNEL32.DLL::GetProcAddress`
+- `KERNEL32.DLL::DeleteCriticalSection`
+- `KERNEL32.DLL::WriteConsoleW`
+- `KERNEL32.DLL::CreateFileW`
+- `KERNEL32.DLL::GetModuleFileNameW`
+- `KERNEL32.DLL::FindNextFileW`
+- `KERNEL32.DLL::OutputDebugStringA`
+- `KERNEL32.DLL::EnterCriticalSection`
+- `KERNEL32.DLL::FindFirstFileW`
+- `KERNEL32.DLL::CreateThread`
+- `KERNEL32.DLL::Sleep`
+- `KERNEL32.DLL::WideCharToMultiByte`
+- `KERNEL32.DLL::QueryPerformanceCounter`
+- `KERNEL32.DLL::QueryPerformanceFrequency`
+- `KERNEL32.DLL::ReleaseSRWLockExclusive`
+- `KERNEL32.DLL::AcquireSRWLockExclusive`
+- `KERNEL32.DLL::TryAcquireSRWLockExclusive`
+- `KERNEL32.DLL::GetCurrentThreadId`
+- `KERNEL32.DLL::SleepConditionVariableSRW`
+- `KERNEL32.DLL::GetTickCount64`
+- `KERNEL32.DLL::WakeAllConditionVariable`
+- `KERNEL32.DLL::CloseHandle`
+- `KERNEL32.DLL::WaitForSingleObjectEx`
+- `KERNEL32.DLL::GetExitCodeThread`
+- `KERNEL32.DLL::InitializeCriticalSectionEx`
+- `KERNEL32.DLL::EncodePointer`
+- `KERNEL32.DLL::DecodePointer`
+- `KERNEL32.DLL::MultiByteToWideChar`
+- `KERNEL32.DLL::LCMapStringEx`
+- `KERNEL32.DLL::GetSystemTimeAsFileTime`
+- `KERNEL32.DLL::GetModuleHandleW`
+- `KERNEL32.DLL::GetStringTypeW`
+- `KERNEL32.DLL::GetCPInfo`
+- `KERNEL32.DLL::RtlCaptureContext`
+- `KERNEL32.DLL::RtlLookupFunctionEntry`
+- `KERNEL32.DLL::RtlVirtualUnwind`
+- `KERNEL32.DLL::UnhandledExceptionFilter`
+- `KERNEL32.DLL::SetUnhandledExceptionFilter`
+- `KERNEL32.DLL::GetCurrentProcess`
+- `KERNEL32.DLL::TerminateProcess`
+- `KERNEL32.DLL::IsProcessorFeaturePresent`
+- `KERNEL32.DLL::IsDebuggerPresent`
+- `KERNEL32.DLL::GetStartupInfoW`
+- `KERNEL32.DLL::GetCurrentProcessId`
+- `KERNEL32.DLL::InitializeSListHead`
+- `KERNEL32.DLL::RtlUnwindEx`
+- `KERNEL32.DLL::InterlockedFlushSList`
+- `KERNEL32.DLL::RtlPcToFileHeader`
+- `KERNEL32.DLL::RaiseException`
+- `KERNEL32.DLL::GetLastError`
+- `KERNEL32.DLL::SetLastError`
+- `KERNEL32.DLL::InitializeCriticalSectionAndSpinCount`
+- `KERNEL32.DLL::TlsAlloc`
+- `KERNEL32.DLL::TlsGetValue`
+- `KERNEL32.DLL::TlsSetValue`
+- `KERNEL32.DLL::TlsFree`
+- `KERNEL32.DLL::FreeLibrary`
+- `KERNEL32.DLL::LoadLibraryExW`
+- `KERNEL32.DLL::ExitThread`
+- `KERNEL32.DLL::FreeLibraryAndExitThread`
+- `KERNEL32.DLL::GetModuleHandleExW`
+- `KERNEL32.DLL::ExitProcess`
+- `KERNEL32.DLL::HeapAlloc`
+- `KERNEL32.DLL::HeapFree`
+- `KERNEL32.DLL::GetStdHandle`
+- `KERNEL32.DLL::GetFileType`
+- `KERNEL32.DLL::FlsAlloc`
+- `KERNEL32.DLL::FlsGetValue`
+- `KERNEL32.DLL::FlsSetValue`
+- `KERNEL32.DLL::FlsFree`
+- `KERNEL32.DLL::VirtualProtect`
+- `KERNEL32.DLL::LCMapStringW`
+- `KERNEL32.DLL::GetLocaleInfoW`
+- `KERNEL32.DLL::IsValidLocale`
+- `KERNEL32.DLL::GetUserDefaultLCID`
+- `KERNEL32.DLL::EnumSystemLocalesW`
+- `KERNEL32.DLL::SetFilePointerEx`
+- `KERNEL32.DLL::HeapReAlloc`
+- `KERNEL32.DLL::FindFirstFileExW`
+- `KERNEL32.DLL::IsValidCodePage`
+- `KERNEL32.DLL::GetACP`
+- `KERNEL32.DLL::GetOEMCP`
+- `KERNEL32.DLL::GetCommandLineA`
+- `KERNEL32.DLL::GetCommandLineW`
+- `KERNEL32.DLL::GetEnvironmentStringsW`
+- `KERNEL32.DLL::FreeEnvironmentStringsW`
+- `KERNEL32.DLL::GetProcessHeap`
+- `KERNEL32.DLL::SetStdHandle`
+- `KERNEL32.DLL::FlushFileBuffers`
+- `KERNEL32.DLL::WriteFile`
+- `KERNEL32.DLL::GetConsoleOutputCP`
+- `KERNEL32.DLL::GetConsoleMode`
+- `KERNEL32.DLL::HeapSize`
+- `USER32.DLL::GetForegroundWindow`
+- `USER32.DLL::GetActiveWindow`
+- `COMDLG32.DLL::GetOpenFileNameA`
+- `COMDLG32.DLL::GetSaveFileNameA`
+- `ADVAPI32.DLL::RegOpenKeyExW`
+- `ADVAPI32.DLL::RegQueryValueExW`
+- `ADVAPI32.DLL::RegCloseKey`
+
+## Exported entry points
+
+- `18000a3e0` `CreateDevice`
+- `180009b60` `DeleteDevice`
+- `180006d50` `GetDeviceDescription`
+- `180006be0` `GetDeviceInterfaceVersion`
+- `180006c20` `GetDeviceName`
+- `180006cb0` `GetDeviceType`
+- `180006bd0` `GetModuleVersion`
+- `180006bf0` `GetNumberOfDevices`
+- `180009e80` `InitializeModuleData`
+- `180026164` `entry`
+
+## Relevant strings and static references
+
+- `18004ec10 kernel32.dll`
+  - referenced at `1800258d6 in FUN_1800258d0`
+- `1800516f8 mscoree.dll`
+  - referenced at `180036dd4 in FUN_180036db8`
+- `1800529a0 ntdll`
+  - referenced at `1800524d0 in <no function>`
+- `180059ad8 DllGigeEnable`
+  - referenced at `18000a0f4 in InitializeModuleData`
+- `180059b00 %s: load dll = %ls`
+  - referenced at `18000a173 in InitializeModuleData`
+- `180059b18 DllMmgrName`
+  - referenced at `18000a19c in InitializeModuleData`
+- `180059b28 DllCompany`
+  - referenced at `18000a1af in InitializeModuleData`
+- `180059b38 DllVersion`
+  - referenced at `18000a1c6 in InitializeModuleData`
+- `180059b48 DllAppName`
+  - referenced at `18000a1dd in InitializeModuleData`
+- `180059b58 DllEnumCamera`
+  - referenced at `18000a1f4 in InitializeModuleData`
+- `180059b68 DllGetDefAE`
+  - referenced at `18000a20f in InitializeModuleData`
+- `180059d20 DllOpen`
+  - referenced at `18000b660 in FUN_18000b610`
+- `1800638a2 mmgr_dal_Toupcam.dll`
+  - referenced at `18006382c in <no function>`
+- `180063e30 LoadLibraryW`
+- `180063e50 GetProcAddress`
+- `180063e78 KERNEL32.dll`
+- `180063eae USER32.dll`
+- `180063ee2 COMDLG32.dll`
+- `180063f22 ADVAPI32.dll`
+- `180064300 LoadLibraryExW`
+
+## Selected function pseudocode
+
+Decompiler output is reconstructed pseudocode, not original source.
+
+Stopped after 0 selected functions.

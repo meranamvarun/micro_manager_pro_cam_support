@@ -6,7 +6,17 @@ Primary researcher: Malavika S
 
 `toupcam.dll_Decompiler.com.zip` is not decompiled source. Its own notes state that native machine code was not decompiled. The archive contains only PE metadata, imports, exports, a manifest, and version-resource data. It therefore cannot be recompiled, optimized, or meaningfully reviewed as source.
 
-The vendor `toupcam.dll` exports 290 functions. The vendor Micro-Manager adapter does not link to the public `Toupcam_*` API; it dynamically resolves private `Dll*` entry points including `DllOpen`, `DllEnumCamera`, and `DllPullImage*`. Recreating that undocumented binary ABI would be brittle and would remain derived from opaque vendor behavior.
+The analyzed vendor `toupcam.dll` exports 290 named entry points: 235 public
+`Toupcam_*` names, 50 private `Dll*` names, and 5 other names. The vendor
+Micro-Manager adapter does not statically import the public API. It loads the SDK
+at runtime and resolves exactly eight private names: `DllGigeEnable`,
+`DllMmgrName`, `DllCompany`, `DllVersion`, `DllAppName`, `DllEnumCamera`,
+`DllGetDefAE`, and `DllOpen`. `DllMmgrName` is an export alias of `DllCamName` at
+the same SDK address. The earlier claim that the adapter resolves
+`DllPullImage*` directly was incorrect; those names are exported by the SDK but
+are not present in the adapter. Recreating the undocumented `Dll*` ABI would
+still be brittle and would remain derived from opaque vendor behavior. See the
+[binary analysis report](reverse-engineering-report.md) and its linked evidence.
 
 Removing Chinese-language strings, company names, or version resources would not change the code's authorship, provenance, maintenance chain, or supply-chain risk. It must not be presented as converting a vendor binary into independently developed software.
 

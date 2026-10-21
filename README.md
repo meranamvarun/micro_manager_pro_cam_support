@@ -6,6 +6,11 @@ This is an independent community guide. It is not affiliated with or endorsed by
 
 > **Source-auditable replacement work:** The `clean-room-driver` branch contains an experimental Micro-Manager adapter backed by the independent, MIT/Apache-2.0 LoupeCam USB driver. It does not yet drive the `0547:114C` ProCAM hardware; see [the clean-room assessment](docs/clean-room-replacement.md) for the exact support boundary.
 
+For clean-room adapter development, the repository also provides a small
+[code-factory harness](factory/guardrails.md): `scripts\factory.ps1 next`
+shows dependency-ready work and `scripts\factory.ps1 verify` runs the source
+audits (and, when configured, the native build and simulation smoke test).
+
 ## Known working setup
 
 The workflow was verified with:

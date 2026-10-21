@@ -14,6 +14,11 @@ The authoritative project state and next steps are in:
 - `docs/compatibility-build.md`
 - `docs/clean-room-replacement.md`
 
+For structured implementation work, also read `factory/guardrails.md` and use
+`scripts/factory.ps1 next` / `scripts/factory.ps1 verify`. The factory tracks
+evidence and required checks; it does not establish unsupported hardware or ABI
+claims.
+
 Read those before changing Toupcam-related code or claims.
 
 ## Clean-room rules

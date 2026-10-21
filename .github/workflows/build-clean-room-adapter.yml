@@ -40,10 +40,6 @@ jobs:
         with:
           toolchain: 1.88.0
 
-      - name: Audit tracked source text
-        shell: pwsh
-        run: ./scripts/audit-clean-room-source.ps1
-
       - name: Test and build LoupeCam C ABI
         shell: pwsh
         run: |
@@ -51,21 +47,13 @@ jobs:
           cargo build --locked --manifest-path external/loupecam/Cargo.toml --release -p loupecam-capi
           Get-ChildItem external/loupecam/target/release -Filter 'loupecam_c*'
 
-      - name: Configure adapter
+      - name: Run clean-room factory gate
         shell: pwsh
-        run: |
-          cmake -S . -B build -A x64 `
-            -DMMCOREANDDEVICES_ROOT="$pwd/external/mmCoreAndDevices" `
-            -DLOUPECAM_ROOT="$pwd/external/loupecam" `
-            -DLOUPECAM_LIBRARY_DIR="$pwd/external/loupecam/target/release"
-
-      - name: Build adapter
-        shell: pwsh
-        run: cmake --build build --config Release --parallel
-
-      - name: Test adapter with simulated camera
-        shell: pwsh
-        run: ctest --test-dir build -C Release --output-on-failure
+        env:
+          MMCOREANDDEVICES_ROOT: ${{ github.workspace }}/external/mmCoreAndDevices
+          LOUPECAM_ROOT: ${{ github.workspace }}/external/loupecam
+          LOUPECAM_LIBRARY_DIR: ${{ github.workspace }}/external/loupecam/target/release
+        run: ./scripts/factory.ps1 verify -RequireNative -BuildDirectory build
 
       - name: Stage and hash artifacts
         shell: pwsh

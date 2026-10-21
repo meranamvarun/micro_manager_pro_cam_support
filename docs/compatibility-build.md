@@ -31,6 +31,31 @@ cmake --build build --config Release --target toupcam_compat mmgr_dal_Toupcam_co
 The adapter output directory also receives `toupcam_compat.dll` and
 `loupecam_c.dll`.
 
+## Factory verification
+
+The repository includes a small dependency-aware harness for clean-room work.
+It validates the work graph, incident-prevention records, whitespace, and the
+source audit every time:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\factory.ps1 verify
+```
+
+Set the three build inputs below to include a fresh native configure, Release
+build, and simulated adapter smoke test. `-RequireNative` makes missing inputs
+an error, which is the appropriate CI gate:
+
+```powershell
+$env:MMCOREANDDEVICES_ROOT = 'C:\src\mmCoreAndDevices'
+$env:LOUPECAM_ROOT = 'C:\src\loupecam'
+$env:LOUPECAM_LIBRARY_DIR = 'C:\src\loupecam\target\release'
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\factory.ps1 verify -RequireNative
+```
+
+Use `scripts\factory.ps1 next -Role dev` to see work whose dependencies are
+complete. Record hardware observations as reproducible evidence; a successful
+source-only run does not demonstrate camera or ABI compatibility.
+
 ## Safety boundary
 
 `TOUPCAM_COMPAT_VENDOR_FILENAMES` defaults to `OFF`. Leave it off for normal

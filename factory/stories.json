@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stories": [
+    {
+      "id": "CAM-001",
+      "title": "Record a reproducible clean-room build baseline",
+      "stage": 0,
+      "roles": ["dev", "qa"],
+      "dependsOn": [],
+      "status": "todo",
+      "acceptanceEvidence": []
+    },
+    {
+      "id": "CAM-010",
+      "title": "Verify the LoupeCam adapter simulation path",
+      "stage": 1,
+      "roles": ["dev", "qa"],
+      "dependsOn": ["CAM-001"],
+      "status": "todo",
+      "acceptanceEvidence": []
+    },
+    {
+      "id": "CAM-020",
+      "title": "Capture target-camera discovery and streaming evidence",
+      "stage": 2,
+      "roles": ["dev", "qa"],
+      "dependsOn": ["CAM-010"],
+      "status": "todo",
+      "acceptanceEvidence": []
+    },
+    {
+      "id": "CAM-030",
+      "title": "Implement one evidence-backed compatibility behaviour",
+      "stage": 3,
+      "roles": ["dev", "qa"],
+      "dependsOn": ["CAM-020"],
+      "status": "todo",
+      "acceptanceEvidence": []
+    }
+  ]
+}

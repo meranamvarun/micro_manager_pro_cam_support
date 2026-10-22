@@ -60,6 +60,8 @@ jobs:
         run: |
           New-Item -ItemType Directory artifacts | Out-Null
           Copy-Item build/Release/mmgr_dal_LoupeCam.dll artifacts/
+          Copy-Item build/Release/mmgr_dal_Toupcam_compat.dll artifacts/
+          Copy-Item build/Release/toupcam_compat.dll artifacts/
           Copy-Item external/loupecam/target/release/loupecam_c.dll artifacts/
           Copy-Item LICENSE artifacts/LICENSE-ADAPTER-APACHE-2.0.txt
           Copy-Item external/loupecam/LICENSE-MIT artifacts/LICENSE-LOUPECAM-MIT.txt
@@ -85,6 +87,6 @@ jobs:
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: micromanager-loupecam-windows-x64-api75
+          name: micromanager-clean-room-adapters-windows-x64-api75
           path: artifacts/
           if-no-files-found: error

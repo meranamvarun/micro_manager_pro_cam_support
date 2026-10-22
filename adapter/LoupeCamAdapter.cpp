@@ -154,8 +154,11 @@ int LoupeCamAdapter::OpenCamera()
       return ReportLoupeCamError("open camera", status);
 
    status = loupecam_camera_info(camera_, &cameraInfo_);
-   if (status != LOUPECAM_STATUS_OK)
+   if (status != LOUPECAM_STATUS_OK) {
+      loupecam_camera_free(camera_);
+      camera_ = nullptr;
       return ReportLoupeCamError("read camera information", status);
+   }
 
    return DEVICE_OK;
 }

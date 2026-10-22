@@ -6,6 +6,10 @@
 
 #include <iostream>
 
+#ifndef SMOKE_DEVICE_NAME
+#define SMOKE_DEVICE_NAME "LoupeCam"
+#endif
+
 int main()
 {
    InitializeModuleData();
@@ -16,7 +20,7 @@ int main()
       return 1;
    }
 
-   MM::Device* device = CreateDevice("LoupeCam");
+   MM::Device* device = CreateDevice(SMOKE_DEVICE_NAME);
    if (device == nullptr)
    {
       std::cerr << "CreateDevice returned null\n";
@@ -55,7 +59,7 @@ int main()
       return 3;
    }
 
-   std::cout << "LoupeCam adapter simulation smoke test passed\n";
+   std::cout << SMOKE_DEVICE_NAME << " adapter simulation smoke test passed\n";
    return 0;
 }
 

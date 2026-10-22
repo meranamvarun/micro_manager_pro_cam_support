@@ -7,7 +7,7 @@
       "stage": 0,
       "roles": ["dev", "qa"],
       "dependsOn": [],
-      "status": "todo",
+      "status": "claimed",
       "acceptanceEvidence": []
     },
     {

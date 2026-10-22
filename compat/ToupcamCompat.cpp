@@ -15,6 +15,7 @@ struct ToupcamCompatHandle {
    LoupecamCamera* camera = nullptr;
    LoupecamStream* stream = nullptr;
    LoupecamGeometry geometry{};
+   bool simulation = false;
    double exposureMs = 20.0;
    double gain = 1.0;
 };
@@ -47,6 +48,7 @@ int ToupcamCompat_OpenFirst(int simulation, ToupcamCompatHandle** handle)
 {
    if (handle == nullptr)
       return -1;
+   g_lastError.clear();
    *handle = nullptr;
 
    auto candidate = std::make_unique<ToupcamCompatHandle>();
@@ -56,6 +58,7 @@ int ToupcamCompat_OpenFirst(int simulation, ToupcamCompatHandle** handle)
    if (status != LOUPECAM_STATUS_OK)
       return Fail("open camera", status);
 
+   candidate->simulation = simulation != 0;
    *handle = candidate.release();
    return 0;
 }
@@ -71,21 +74,25 @@ int ToupcamCompat_Start(ToupcamCompatHandle* handle, double exposureMs, double g
       return -1;
    if (handle->stream != nullptr)
       return 0;
+   g_lastError.clear();
 
    LoupecamStartOptions options = loupecam_start_options_default();
-   options.size = 0;
+   options.size = handle->simulation ? 2 : 0;
    options.pixel_mode = LOUPECAM_PIXEL_MODE_RAW8;
    options.exposure_us = static_cast<uint32_t>(std::clamp(
       exposureMs * 1000.0, 1.0, 4294967295.0));
    options.gain = gain;
-   const LoupecamStatus status =
+   LoupecamStatus status =
       loupecam_camera_start(handle->camera, &options, &handle->stream);
    if (status != LOUPECAM_STATUS_OK)
       return Fail("start stream", status);
 
    status = loupecam_camera_geometry(handle->camera, &handle->geometry);
-   if (status != LOUPECAM_STATUS_OK)
+   if (status != LOUPECAM_STATUS_OK) {
+      loupecam_stream_free(handle->stream);
+      handle->stream = nullptr;
       return Fail("read camera geometry", status);
+   }
 
    handle->exposureMs = exposureMs;
    handle->gain = gain;

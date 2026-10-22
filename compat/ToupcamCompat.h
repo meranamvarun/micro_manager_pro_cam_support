@@ -7,7 +7,11 @@
 #include <wchar.h>
 
 #ifdef _WIN32
+#ifdef TOUPCAM_COMPAT_BUILD
 #define TOUPCAM_COMPAT_API __declspec(dllexport)
+#else
+#define TOUPCAM_COMPAT_API __declspec(dllimport)
+#endif
 #else
 #define TOUPCAM_COMPAT_API
 #endif

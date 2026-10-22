@@ -91,6 +91,7 @@ target_include_directories(toupcam_compat PRIVATE
 )
 target_compile_features(toupcam_compat PRIVATE cxx_std_17)
 target_compile_definitions(toupcam_compat PRIVATE
+  TOUPCAM_COMPAT_BUILD
   NOMINMAX
   WIN32_LEAN_AND_MEAN
   _CRT_SECURE_NO_WARNINGS
@@ -100,6 +101,14 @@ if(MSVC)
   target_link_options(toupcam_compat PRIVATE /DYNAMICBASE /NXCOMPAT)
 endif()
 target_link_libraries(toupcam_compat PRIVATE "${LOUPECAM_C_LIBRARY}")
+if(WIN32)
+  add_custom_command(TARGET toupcam_compat POST_BUILD
+    COMMAND "${CMAKE_COMMAND}" -E copy_if_different
+      "${LOUPECAM_LIBRARY_DIR}/loupecam_c.dll"
+      "$<TARGET_FILE_DIR:toupcam_compat>/loupecam_c.dll"
+    VERBATIM
+  )
+endif()
 
 add_library(mmgr_dal_Toupcam_compat SHARED
   adapter/ToupcamCompatAdapter.cpp
@@ -153,3 +162,15 @@ if(MSVC)
 endif()
 target_link_libraries(loupecam_adapter_smoke PRIVATE mmgr_dal_LoupeCam)
 add_test(NAME loupecam_adapter_simulation COMMAND loupecam_adapter_smoke)
+
+add_executable(toupcam_compat_adapter_smoke tests/adapter_smoke.cpp)
+target_include_directories(toupcam_compat_adapter_smoke PRIVATE "${MMDEVICE_DIR}")
+target_compile_features(toupcam_compat_adapter_smoke PRIVATE cxx_std_17)
+target_compile_definitions(toupcam_compat_adapter_smoke PRIVATE
+  SMOKE_DEVICE_NAME="ToupcamCompat"
+)
+if(MSVC)
+  target_compile_options(toupcam_compat_adapter_smoke PRIVATE /W4 /permissive- /utf-8)
+endif()
+target_link_libraries(toupcam_compat_adapter_smoke PRIVATE mmgr_dal_Toupcam_compat)
+add_test(NAME toupcam_compat_adapter_simulation COMMAND toupcam_compat_adapter_smoke)

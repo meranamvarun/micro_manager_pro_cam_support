@@ -1,3 +1,4 @@
 # One JSON object per confirmed agent-caused defect.  Closed incidents require
 # id, status, summary, preventionCheck, and closedAt.  Keep this file empty
 # until there is a confirmed incident; do not turn speculation into policy.
+{"id":"INC-001","status":"closed","summary":"The compatibility target did not compile because ToupcamCompat_Start reassigned a const LoupecamStatus local.","preventionCheck":"scripts/factory.ps1 verify -RequireNative performs the pinned MSVC native build in CI.","closedAt":"2026-10-22"}

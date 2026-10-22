@@ -34,7 +34,6 @@ target_include_directories(mmgr_dal_LoupeCam PRIVATE
 target_compile_features(mmgr_dal_LoupeCam PRIVATE cxx_std_17)
 target_compile_definitions(mmgr_dal_LoupeCam PRIVATE
   NOMINMAX
-  WIN32_LEAN_AND_MEAN
   _CRT_SECURE_NO_WARNINGS
   _SCL_SECURE_NO_WARNINGS
 )
@@ -127,7 +126,6 @@ target_include_directories(mmgr_dal_Toupcam_compat PRIVATE
 target_compile_features(mmgr_dal_Toupcam_compat PRIVATE cxx_std_17)
 target_compile_definitions(mmgr_dal_Toupcam_compat PRIVATE
   NOMINMAX
-  WIN32_LEAN_AND_MEAN
   _CRT_SECURE_NO_WARNINGS
   _SCL_SECURE_NO_WARNINGS
 )

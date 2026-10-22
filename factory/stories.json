@@ -7,8 +7,11 @@
       "stage": 0,
       "roles": ["dev", "qa"],
       "dependsOn": [],
-      "status": "claimed",
-      "acceptanceEvidence": []
+      "status": "in_review",
+      "acceptanceEvidence": [
+        "GitHub Actions run 39807306699 compiled all native targets with pinned dependencies and passed both CTest simulation tests on Windows x64.",
+        "Artifact micromanager-clean-room-adapters-windows-x64-api75 uploaded with provenance, licenses, dependency tree, and SHA-256 manifest."
+      ]
     },
     {
       "id": "CAM-010",
